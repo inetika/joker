@@ -10,6 +10,7 @@ import (
 
 func main() {
 	http.HandleFunc("/", count)
+	http.Handle("/favicon.ico", http.NotFoundHandler())
 	appengine.Main()
 }
 
@@ -95,25 +96,25 @@ func talk(v int, w http.ResponseWriter) {
 		fmt.Fprintln(w, "Drunk again?! You're useless animal!")
 	} else if v > 400 && v <= 410 {
 		fmt.Fprintln(w, "No dude! I'm totally sober!")
-	} else if v > 400 && v <= 410 {
-		fmt.Fprintln(w, "Sober? Yeah, right. You probable don't even remember how to bark!")
 	} else if v > 410 && v <= 420 {
-		fmt.Fprintln(w, "What?! Never!")
+		fmt.Fprintln(w, "Sober? Yeah, right. You probable don't even remember how to bark!")
 	} else if v > 420 && v <= 430 {
-		fmt.Fprintln(w, "Yeah, then prove it! Bark!")
+		fmt.Fprintln(w, "What?! Never!")
 	} else if v > 430 && v <= 440 {
-		fmt.Fprintln(w, "Sure! Bark-bark-bark-bark...")
+		fmt.Fprintln(w, "Yeah, then prove it! Bark!")
 	} else if v > 440 && v <= 450 {
-		fmt.Fprintln(w, "Sorry...")
+		fmt.Fprintln(w, "Sure! Bark-bark-bark-bark...")
 	} else if v > 450 && v <= 460 {
-		fmt.Fprintln(w, "I really don't know why I like this joke...")
+		fmt.Fprintln(w, "Sorry...")
 	} else if v > 460 && v <= 470 {
-		fmt.Fprintln(w, "So anyway, how's life?")
+		fmt.Fprintln(w, "I really don't know why I like this joke...")
 	} else if v > 470 && v <= 480 {
-		fmt.Fprintln(w, "Not that interesting from the looks of it...")
+		fmt.Fprintln(w, "So anyway, how's life?")
 	} else if v > 480 && v <= 490 {
+		fmt.Fprintln(w, "Not that interesting from the looks of it...")
+	} else if v > 490 && v <= 500 {
 		fmt.Fprintln(w, "I mean you're still here.")
-	} else if v > 490 {
+	} else if v > 500 {
 		fmt.Fprintln(w, "To be continued...")
 	}
 }
